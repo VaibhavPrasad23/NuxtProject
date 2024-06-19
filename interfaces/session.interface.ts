@@ -1,7 +1,8 @@
 export interface ISession {
   auth?: {
     name?: {
-      brand: string
+      firstname: string
+      lastname: string
 
     }
     id?: number
