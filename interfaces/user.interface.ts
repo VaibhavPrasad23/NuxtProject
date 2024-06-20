@@ -4,9 +4,9 @@ interface IProfileUser {
 }
 
 export interface IUser {
-  id: number
-  email: string
-  password: string
-  username: string
+  id?: number
+  email?: string
+  password?: string
+  username?: string
   // name: IProfileUser
 }

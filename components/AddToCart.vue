@@ -1,11 +1,9 @@
 <template>
-    <!-- action -->
     <section class="flex gap-2 items-center">
         <button @click="decreaseQuantity" :disabled="quantity == 0" class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
         <span class="text-lg text-blue-500 px-6">{{ quantity }}</span>
         <button @click="increaseQuantity" class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
     </section>
-    <!-- summary -->
     <section class="text-right flex gap-2 items-center justify-end">
         <span class="text-2xl ">
             <i class="text-red-800">₹</i>
@@ -23,7 +21,6 @@
 
 import type { ICart } from '../interfaces/cart.interface';
 
-// composables
 const app = useNuxtApp()
 const route = useRoute()
 const { session } = await useSession()
@@ -45,12 +42,16 @@ const props = defineProps({
         type: Number,
         required: true
     },
-    name: {
+    title: {
         type: String,
         required: true
     },
     price: {
         type: Number,
+        required: true
+    },
+    picture: {
+        type: String,
         required: true
     }
 })
@@ -59,17 +60,16 @@ const decreaseQuantity = (): void => {
     if (quantity.value > 0) quantity.value--
 }
 
-// increase amount of item
 const increaseQuantity = (): void => {
     quantity.value++
 }
 
-// handler for push new item into carts state
 const addCart = () => {
   carts.addItem({
     productId: props.productId,
     price: props.price,
     quantity: quantity.value,
+    picture: props.picture,
     title: props.title,
     userId
   })

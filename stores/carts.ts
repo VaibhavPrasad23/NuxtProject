@@ -32,13 +32,10 @@ export const useCartsState = defineStore('carts-state', {
 
   actions: {
 
-    // push item into carts state
-    addItem(payload: ICart) {
 
-      // check cart status available from payload
+    addItem(payload: ICart) {
       const isProductExist: boolean = this.carts.some(cart => cart.productId == payload.productId)
 
-      // re assign quantity
       if (isProductExist) {
         this.carts.forEach(cart => {
           if (cart.productId == payload.productId) {

@@ -3,24 +3,24 @@
 
     <NuxtLayout name="default">
         <div class="flex ml-32">
-        <section class="mt-2 ml-96  bg-white p-8 shadow-sm border mr-10 w-1/2 rounded-md">
+        <section class="mt-2 ml-96 mt-2 bg-white p-8 shadow-sm border mr-10 w-1/2 invert rounded-md">
             <div class="">
                 <div class="">
-                    <h1 class="text-4xl font-medium text-center font-sans font-serif mb-4">Add a Car to Showroom</h1>
-                    <p class="text-center">Add car information!</p>
+                    <h1 class="text-4xl font-medium text-center font-sans font-serif mb-4">Sell your Car</h1>
+                    <p class="text-center">Your car information!</p>
                 </div>
             </div>
 
-            <form class="mt-4" @submit.prevent="formed1">
+            <form class="mt-4" @submit.prevent="formed2">
                 <div class="form--wrapper ">
                     <label class="form--label" for="name">Car Model</label>
-                    <input v-model="name" class="form--input" type="text" name="name" id="name" required placeholder="Car Model">
+                    <input v-model="name" class="form--input" type="text" name="name1" id="name1" required placeholder="Car Model">
                 </div>
 
                 <div class="form--wrapper ">
                     <label class="form--label" for="pic">Picture</label>
-                    <input class="form--input" type="file" name="pic" id="pic" required accept="image/*" @change="previewImage">
-                    <img v-if="pic" :src="pic" alt="Preview" class="w-full form--input max-w-xs mt-2" type="text" name="pic" id="pic" required placeholder="pic">
+                    <input class="form--input " type="file" name="pic" id="pic" required accept="image/*" @change="previewImage2">
+                    <img v-if="pic" :src="pic" alt="Preview" class="w-full form--input invert max-w-xs mt-2" type="text" name="pic" id="pic" required placeholder="pic">
                 </div>
 
                 <div class="form--wrapper ">
@@ -50,12 +50,7 @@
                 <button ref="button" type="submit" class="btn btn-primary w-full mb-6">Send your car to us.</button>
 
             </form>
-        </section>
-
-
-
-
-</div>
+        </section> </div>
         
     </NuxtLayout>
     
@@ -70,30 +65,33 @@ import { ref } from 'vue'
 const id = ref(null)
 
 const name = ref('')
-const brand = ref('')
+const brand= ref('')
 const description = ref('')
 const price = ref(0)
 const year = ref(0)
 const type = ref('')
 const pic = ref('')
 
-const previewImage = (event) => {
 
-    const file = event.target.files[0]
-    const fileName = file.name
-    pic.value = fileName
+
+const previewImage2 = (event) => {
+
+const file = event.target.files[0]
+const fileName = file.name
+pic.value = fileName
 }
 
 
-const formed1 = async () => {
+
+const formed2 = async () => {
     try {
-        const response = await fetch('http://localhost:8090/car/', {
+        const response = await fetch('http://localhost:8090/used/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                id: id.value,
+                id: id?.value,
                 name: name.value,
                 brand: brand.value,
                 description: description.value,

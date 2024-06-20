@@ -42,27 +42,21 @@
 
 
 
-// composables
 const app = useNuxtApp()
 const router = useRouter()
 
-// body
 const username = ref('')
 const password = ref('')
 const id = ref()
 
-// DOM Element
 const button = ref<HTMLButtonElement | null>(null)
 
-// use notyf
 const error: any = app.$notyfError
 const success: any = app.$notyfSuccess
 
-// middleware
 definePageMeta({
     middleware: [
         async (to: any, from: any) => {
-            // get session
             const { session } = await useSession()
 
             if (session.value?.auth) {
@@ -72,14 +66,11 @@ definePageMeta({
     ]
 })
 
-// form handler
 const login = async () => {
 
-    // disabled submit button
     button!.value!.innerText = 'Please wait ...'
     button!.value!.disabled = true
 
-    // try to login
     const { data } = await useFetch('/auth/login', {
         method: 'POST',
         body: {
@@ -96,12 +87,10 @@ const login = async () => {
         error(`Login Failed! ${ data?.value?.message }`)
     }
 
-    // enabled
     button!.value!.innerText = 'Submit'
     button!.value!.disabled = false
 }
 
-// randoming user
 const getRandomUser = async (evt: MouseEvent) => {
 
     const targetElement = evt.target as HTMLButtonElement
@@ -111,7 +100,6 @@ const getRandomUser = async (evt: MouseEvent) => {
 
     const { data: user } = await useFetch('/api/users')
 
-    // auto fill
     if (user.value) {
 
         username.value = user.value.username

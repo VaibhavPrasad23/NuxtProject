@@ -1,6 +1,5 @@
 <template>
     <section class="bg-white p-12 rounded-lg border flex flex-col md:flex-row gap-12">
-        <!-- image -->
         <div class="md:w-4/12">
             <!-- <NuxtImg preset="avatar" :src="product?.pic" quality="80" format="webp" preload loading="lazy"></NuxtImg> -->
                             <img :src="'/'+ product?.pic" alt="Logo" class="w-100 h-auto mr-5 mb-8">
@@ -30,9 +29,8 @@
                 <p class="text-blue-500">Description</p>
                 <h1 class="text-sm text-gray-500">{{ product?.description }}</h1>
             </div>
-            <!-- action -->
             <div>
-                <AddToCart :product-id="product.id ?? 0" :title="product.title" :price="product.price ?? 0"></AddToCart>
+                <AddToCart :product-id="product?.id ?? 0" :title="product?.name" :price="product?.price ?? 0" :picture="product?.pic ?? 0"></AddToCart>
             </div>
         </div>
         

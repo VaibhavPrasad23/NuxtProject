@@ -1,7 +1,6 @@
 import type { IUser } from "../../../interfaces/user.interface"
 import type { ISession } from "../../../interfaces/session.interface"
 
-// define interface for user login
 interface IRequestBody {
   username: string
   password: string
@@ -38,13 +37,10 @@ export default defineEventHandler(async event => {
     //   body
     // })
 
-    // get spesific user using ID
     const user: IUser = await $fetch(`http://localhost:8090/user/${body.id}`, { method: 'GET' })
 
-    // access session
     const session: ISession = event.context.session
 
-    // save user credential into session
     session.auth = {
       name: {
         firstname: user.username,
@@ -53,7 +49,6 @@ export default defineEventHandler(async event => {
       id: user.id,
     } as ISessionAuth
 
-    // return to client
     return {
       status: true,
       message: 'Login success',
@@ -63,7 +58,6 @@ export default defineEventHandler(async event => {
     } as IResponse
 
   } catch (err: any) {
-    // failed authentication
     return {
       status: false,
       message: err?.data,

@@ -6,8 +6,6 @@
             <p class="text-gray-700">Welcome to iCube's Car Showroom.</p>
         </section>
 
-        <ProoductCategory @category:change="categoryHandler" ></ProoductCategory>
-
         <section v-if="!pending" class="my-5 md:text-right">
             <p class="text-gray-600">Showing {{ cars?.name }} cars</p>
         </section>
@@ -35,7 +33,7 @@ useHead({
     ]
 })
 
-const { data: cars, pending }: { data: Ref<ICar[]>, pending: Ref<boolean> } = await useFetch('/api/cars/', { lazy: true })
+const { data: cars, pending }: { data: Ref<ICar[]>, pending: Ref<boolean> } = await useFetch('http://localhost:8090/used/', { lazy: true })
 
 const   categoryHandler = async (URI: string) => {
 

@@ -1,30 +1,25 @@
 <template>
     <Head>
-        <Title>Product | {{ product?.title }}</Title>
+        <Title>Product | {{ product?.name }}</Title>
         <Meta name="description" :content="product?.description"></Meta>
     </Head>
     <NuxtLayout name="default">
-        <!-- detail -->
         <ProductDetail :product="product"></ProductDetail>
     </NuxtLayout>
 </template>
 
 <script setup lang="ts">
 
-import { IProduct } from '../../interfaces/product.interface'
+import type { ICar } from '../../interfaces/car.interface'
 
-// get param ID
 const { id } = useRoute().params
 
-// generate URI
-const URI: string = `https://fakestoreapi.com/products/${ id }`
+const URI: string = `http://localhost:8090/car/brandz/${ id }`
 
-// fetching detail product
-const { data: product }: { data: Ref<IProduct> } = await useFetch(URI, { key: URI })
+const { data: product }: { data: Ref<ICar> } = await useFetch(URI, { key: URI })
 
-// empty fetch result
 if ( !product.value ) {
-    throw createError({ statusCode: 404, message: `Product detail with ID ${ id } not found` })
+    throw createError({ statusCode: 404, message: `Car detail with ID ${ id } not found` })
 }
 
 </script>

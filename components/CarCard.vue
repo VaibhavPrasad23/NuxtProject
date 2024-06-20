@@ -7,12 +7,10 @@
 
             </div>
             <section class= "ml-2">
-                <!-- product -->
                 <div>
                     <small class="text-gray-500">Car</small>
                     <h1 class=" text-l truncate">{{ car?.name }}</h1>
                 </div>
-                <!-- price -->
                 <div>
                     <small class="text-gray-500 mb-4">Price</small>
                     <h1 class=" text-sm">₹{{ car?.price }}</h1>

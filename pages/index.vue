@@ -13,7 +13,6 @@ const { session } = await useSession()
 
 const getUserName = (): string => {
 
-  // get first and second name
   const { firstname, lastname }: { firstname: string, lastname: string } = session.value?.auth?.name  
   
   return `${ setUppercaseAtFirstChar(firstname)  }`
@@ -21,10 +20,8 @@ const getUserName = (): string => {
 
 const setUppercaseAtFirstChar = (word: string): string => {
 
-  // parse to array
   const wordInArray: string[] = word.split('')
 
-  // replace first char into uppercase
   wordInArray[0] = wordInArray[0].toUpperCase()
 
   return wordInArray.join('')
