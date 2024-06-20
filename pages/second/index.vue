@@ -74,7 +74,7 @@ const pic = ref('')
 
 
 
-const previewImage2 = (event) => {
+const previewImage2 = (event: { target: { files: any[]; }; }) => {
 
 const file = event.target.files[0]
 const fileName = file.name
