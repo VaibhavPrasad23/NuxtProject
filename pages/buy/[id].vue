@@ -18,7 +18,7 @@
                 
                 <div class="form--wrapper ">
                     <label class="form--label" for="name">Car Model</label>
-                    <input v-model="id" class="form--input" type="text" name="name" id="name" placeholder="Car Model" readonly>
+                    <input v-model="id" class="form--input" type="text" name="name" id="name" placeholder="Car Model">
                     
                 </div>
 
@@ -74,11 +74,10 @@ const price = ref(0)
 
 const pic = ref('')
 
-const imager = await fetch("http://localhost:8090/used/pic/McLaren%20Speedtail");
 
 const formed2 = async () => {
     try {
-        const response = await fetch("http://localhost:8090/used/updatecarown/"+ name.value , {
+        const response = await fetch("http://localhost:8090/used/updatecarown/"+ id , {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -108,7 +107,7 @@ import type { ICar } from '../../interfaces/car.interface'
 
 const { id } = useRoute().params
 
-const URI: string = 'http://localhost:8090/used/car-model/'+ name.value 
+const URI: string = 'http://localhost:8090/used/car-model/'+  id 
 // const URI: string = `http://localhost:8090/used/`+ name.value
 
 const { data: product }: { data: Ref<ICar> } = await useFetch(URI, { key: URI })
