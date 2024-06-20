@@ -6,6 +6,7 @@
             </NuxtLink>
             <ul :class="isSidebar ? 'right-0' : '-right-full'"
                 class="flex flex-col md:flex-row gap-4 items-end md:items-center p-8 md:p-0 fixed md:static top-20 bottom-0 text-white duration-300 ease-in">
+                <USelectMenu v-model="selected" :options="people" />
                 <li>
                     <NuxtLink to="/second" class="mr-4">Sell Your Car</NuxtLink>
                 </li>
@@ -21,6 +22,9 @@
                 </li>
                 <li>
                     <NuxtLink to="/about" class="pl-4">About Us</NuxtLink>
+                </li>
+                <li>
+                    <NuxtLink to="/secondhand" class="pl-4">Used Cars</NuxtLink>
                 </li>
                 <li>
                     <NuxtLink to="/showroom" class="pl-4">Showroom</NuxtLink>
@@ -62,7 +66,9 @@ const logout = async () => {
 
 
 
+const people = ['Wade Cooper', 'Arlene Mccoy', 'Devon Webb', 'Tom Cook', 'Tanya Fox', 'Hellen Schmidt', 'Caroline Schultz', 'Mason Heaney', 'Claudie Smitham', 'Emil Schaefer']
 
+const selected = ref(people[0])
 
 
 </script>

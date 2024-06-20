@@ -7,4 +7,7 @@ export interface ICar {
   pic?: string;
   type?: string;
   id?: number;
+  ownername?: string
+  ownernum?: number
+  address?: string
 }

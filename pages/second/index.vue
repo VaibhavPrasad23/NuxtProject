@@ -14,7 +14,24 @@
             <form class="mt-4" @submit.prevent="formed2">
                 <div class="form--wrapper ">
                     <label class="form--label" for="name">Car Model</label>
-                    <input v-model="name" class="form--input" type="text" name="name1" id="name1" required placeholder="Car Model">
+                    <input v-model="name" class="form--input" type="text" name="name" id="name" required placeholder="Car Model" >
+
+                    
+                </div>
+
+                <div class="form--wrapper ">
+                    <label class="form--label" for="name">Owner Name</label>
+                    <input v-model="ownername" class="form--input" type="text" name="ownername" id="ownername" required placeholder="Owner's Name">
+                </div>
+
+                <div class="form--wrapper ">
+                    <label class="form--label" for="name">Owner's Number</label>
+                    <input v-model="ownernum" class="form--input" type="text" name="ownernum" id="ownernum" required placeholder="Owner's Number">
+                </div>
+
+                <div class="form--wrapper ">
+                    <label class="form--label" for="name">Address</label>
+                    <input v-model="address" class="form--input" type="text" name="address" id="address" required placeholder="Address">
                 </div>
 
                 <div class="form--wrapper ">
@@ -63,7 +80,9 @@ const router = useRouter()
 
 import { ref } from 'vue'
 const id = ref(null)
-
+const ownername = ref('')
+const ownernum = ref('')
+const address = ref('')
 const name = ref('')
 const brand= ref('')
 const description = ref('')

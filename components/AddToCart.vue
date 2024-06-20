@@ -11,6 +11,8 @@
         </span>
         <br>
         <button @click="addCart" class="btn btn-primary" :disabled="quantity == 0">
+    
+        
             <i class="fa-solid fa-shopping-cart"></i>
             Add To Cart
         </button>

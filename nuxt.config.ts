@@ -1,16 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [
-    [
-      '@pinia/nuxt', {
-        autoImports: ['defineStore']
-      }
-    ],
-    '@nuxtjs/tailwindcss', '@sidebase/nuxt-session',
-    '@nuxt/image', 'nuxt-og-image',
-    '@pinia-plugin-persistedstate/nuxt',
-  ],
+  modules: [[
+    '@pinia/nuxt', {
+      autoImports: ['defineStore']
+    }
+  ], '@nuxtjs/tailwindcss', '@sidebase/nuxt-session', '@nuxt/image', 'nuxt-og-image', '@pinia-plugin-persistedstate/nuxt', ],
   plugins: [
     {
       src: '~/plugins/notyf.client.ts',

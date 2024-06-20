@@ -2,12 +2,17 @@
     <NuxtLayout name="default">
 
         <section class="mb-8">
+            <button class="btn btn-primary float-right">                     
+                <NuxtLink to="/second" class="relative">Add your car<div class="text-red-700 absolute -top-2 -right-3">{{  }}</div>
+            </NuxtLink>
+        </button>
             <h2 class="text-blue-800 text-xl">Car Search</h2>
             <p class="text-gray-700">Welcome to iCube's Car Showroom.</p>
+
         </section>
 
-        <section v-if="!pending" class="my-5 md:text-right">
-            <p class="text-gray-600">Showing {{ cars?.name }} cars</p>
+        <section v-if="!pending" class="my-5 md:text-right ">
+            <p class="text-gray-600">Showing cars</p>
         </section>
 
         <section v-if="!pending" class="grid md:grid-cols-4 grid-cols-1 gap-4">

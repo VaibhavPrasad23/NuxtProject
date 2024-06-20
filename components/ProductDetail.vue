@@ -30,7 +30,12 @@
                 <h1 class="text-sm text-gray-500">{{ product?.description }}</h1>
             </div>
             <div>
+                <div class="mb-4" v-if="$route.path.includes('secondhand')">
+                    <NuxtLink class="btn btn-primary mt-2" :to="`/buy/${ product?.name }`">Buy</NuxtLink>
+                </div>
+                <div class="mb-4" v-if="$route.path.includes('cars')">
                 <AddToCart :product-id="product?.id ?? 0" :title="product?.name" :price="product?.price ?? 0" :picture="product?.pic ?? 0"></AddToCart>
+            </div>
             </div>
         </div>
         

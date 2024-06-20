@@ -15,10 +15,14 @@
                     <small class="text-gray-500 mb-4">Price</small>
                     <h1 class=" text-sm">₹{{ car?.price }}</h1>
                 </div>
+                
+                <div class="mb-4" v-if="$route.path.includes('secondhand')">
+                    <small class="text-gray-500 mb-4">Owner</small>
+                    <h1 class=" text-sm">{{ car?.ownername}}</h1>
+                </div>
             </section>
         </section>
-        <NuxtLink class="btn btn-primary mt-2" :to="`/cars/${ car?.id }`">Details</NuxtLink>
-        
+        <NuxtLink class="btn btn-primary mt-2" :to="`/${ $route.path.includes('showroom') ? 'cars' : 'secondhand'}/${ car?.id }`">Details</NuxtLink>
     </section>
 </template>
 
