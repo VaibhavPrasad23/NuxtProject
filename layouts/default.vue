@@ -14,12 +14,12 @@
                     <NuxtLink to="/formed">Add Car</NuxtLink>
                 </li>
 
-                <li>
+                <!-- <li>
                     <NuxtLink to="/cart" class="relative pl-3">
                         Cart
                         <div class="text-red-700 absolute -top-2 -right-3">{{ carts.getCartsLength }}</div>
                     </NuxtLink>
-                </li>
+                </li> -->
                 <li>
                     <NuxtLink to="/about" class="pl-4">About Us</NuxtLink>
                 </li>

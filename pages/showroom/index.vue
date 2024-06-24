@@ -6,7 +6,7 @@
             <p class="text-gray-700">Welcome to iCube's Car Showroom.</p>
         </section>
 
-        <ProoductCategory @category:change="categoryHandler" ></ProoductCategory>
+        <!-- <ProoductCategory @category:change="categoryHandler" ></ProoductCategory> -->
 
         <section v-if="!pending" class="my-5 md:text-right">
             <p class="text-gray-600">Showing {{ cars?.name }} cars</p>

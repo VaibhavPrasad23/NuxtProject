@@ -33,8 +33,10 @@
                 <div class="mb-4" v-if="$route.path.includes('secondhand')">
                     <NuxtLink class="btn btn-primary mt-2" :to="`/buy/${ product?.name }`">Buy</NuxtLink>
                 </div>
-                <div class="mb-4" v-if="$route.path.includes('cars')">
-                <AddToCart :product-id="product?.id ?? 0" :title="product?.name" :price="product?.price ?? 0" :picture="product?.pic ?? 0"></AddToCart>
+                <div class="mb-4 " v-if="$route.path.includes('cars')">
+                    <NuxtLink class="btn btn-primary" :to="`/buydir/${ product?.name }`">Buy Now</NuxtLink>
+                    <div class="mt-4"></div>
+                <!-- <AddToCart :product-id="product?.id ?? 0" :title="product?.name" :price="product?.price ?? 0" :picture="product?.pic ?? 0"></AddToCart> -->
             </div>
             </div>
         </div>
