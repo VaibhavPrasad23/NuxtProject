@@ -16,7 +16,7 @@
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "@sidebase/nuxt-session": "^0.2.7",
     "@types/node": "^18.17.3",
-    "nuxt": "^3.12.2",
+    "nuxt": "3.12.2",
     "nuxt-og-image": "^2.0.18"
   },
   "dependencies": {

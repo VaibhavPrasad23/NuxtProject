@@ -12,57 +12,65 @@
             </div>
 
             <form class="mt-4" @submit.prevent="formed2">
-                <div class="form--wrapper ">
-                    <label class="form--label" for="name">Car Model</label>
-                    <input v-model="name" class="form--input" type="text" name="name" id="name" required placeholder="Car Model" >
 
-                    
-                </div>
 
-                <div class="form--wrapper ">
-                    <label class="form--label" for="name">Owner Name</label>
-                    <input v-model="ownername" class="form--input" type="text" name="ownername" id="ownername" required placeholder="Owner's Name">
-                </div>
-
-                <div class="form--wrapper ">
-                    <label class="form--label" for="name">Owner's Number</label>
-                    <input v-model="ownernum" class="form--input" type="text" name="ownernum" id="ownernum" required placeholder="Owner's Number">
-                </div>
-
-                <div class="form--wrapper ">
-                    <label class="form--label" for="name">Address</label>
-                    <input v-model="address" class="form--input" type="text" name="address" id="address" required placeholder="Address">
-                </div>
-
-                <div class="form--wrapper ">
+                <div class="form--wrapper ml-[10vw] bg-white max-w-96 p-4 flex flex-col justify-between rounded-lg shadow-sm duration-300 border border-gray-100 hover:border-blue-500 hover:shadow-blue-400 hover:shadow-lg hover:-translate-y-1">
+                
                     <label class="form--label" for="pic">Picture</label>
                     <input class="form--input " type="file" name="pic" id="pic" required accept="image/*" @change="previewImage2">
                     <img v-if="pic" :src="pic" alt="Preview" class="w-full form--input invert max-w-xs mt-2" type="text" name="pic" id="pic" required placeholder="pic">
                 </div>
+                <div class="flex justify-between">
 
-                <div class="form--wrapper ">
-                    <label class="form--label" for="brand">Brand</label>
-                    <input v-model="brand" class="form--input" type="text" name="brand" id="brand" required placeholder="Brand">
+                    
+                    <div class="w-1/2">
+                        <div class="form--wrapper ">
+                            <label class="form--label" for="name">Car Model</label>
+                            <input v-model="name" class="form--input" type="text" name="name" id="name" required placeholder="Car Model" >
+                        </div>
+
+                        <div class="form--wrapper ">
+                            <label class="form--label" for="brand">Brand</label>
+                            <input v-model="brand" class="form--input" type="text" name="brand" id="brand" required placeholder="Brand">
+                        </div>
+
+                        <div class="form--wrapper ">
+                            <label class="form--label" for="year">Year</label>
+                            <input v-model.number="year" class="form--input" type="number" name="year" id="year" required placeholder="Year">
+                        </div>
+
+                        <div class="form--wrapper ">
+                            <label class="form--label" for="type">Car Type</label>
+                            <input v-model="type" class="form--input" type="text" name="type" id="type" required placeholder="Type of Car">
+                        </div>
+                    </div>
+                    <div class="w-1/2">
+                        <div class="form--wrapper ">
+                            <label class="form--label" for="ownername">Owner Name</label>
+                            <input v-model="ownername" class="form--input" type="text" name="ownername" id="ownername" required placeholder="Owner's Name">
+                        </div>
+
+                        <div class="form--wrapper ">
+                            <label class="form--label" for="ownernum">Owner's Number</label>
+                            <input v-model="ownernum" class="form--input" type="text" name="ownernum" id="ownernum" required placeholder="Owner's Number">
+                        </div>
+
+                        <div class="form--wrapper ">
+                            <label class="form--label" for="address">Address</label>
+                            <input v-model="address" class="form--input" type="text" name="address" id="address" required placeholder="Address">
+                        </div>
+
+                        <div class="form--wrapper">
+                            <label class="form--label" for="price">Price</label>
+                            <input v-model.number="price" class="form--input" type="number" name="price" id="price" required placeholder="Price">
+                        </div>
+                    </div>
                 </div>
-                <div class="form--wrapper ">
+                <div class="form--wrapper">
                     <label class="form--label" for="description">Description</label>
                     <input v-model="description" class="form--input" type="text" name="description" id="description" required placeholder="Description">
                 </div>
-                <div class="form--wrapper ">
-                    <label class="form--label" for="price">Price</label>
-                    <input v-model.number="price" class="form--input" type="number" name="price" id="price" required placeholder="Price">
-                </div>
 
-
-                <div class="form--wrapper">
-                    <label class="form--label" for="year">Year</label>
-                    <input v-model.number="year" class="form--input" type="number" name="year" id="year" required placeholder="Year">
-                </div>
-
-                <div class="form--wrapper">
-                    <label class="form--label" for="type">Car Type</label>
-                    <input v-model="type" class="form--input" type="text" name="type" id="type" required placeholder="Type of Car">
-                </div>
 
                 <button ref="button" type="submit" class="btn btn-primary w-full mb-6">Send your car to us.</button>
 

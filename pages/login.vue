@@ -39,9 +39,6 @@
 
 <script setup lang="ts">
 
-
-
-
 const app = useNuxtApp()
 const router = useRouter()
 

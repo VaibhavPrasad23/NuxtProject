@@ -44,7 +44,7 @@
                     <input v-model="address" class="form--input" type="text" name="address" id="address" required placeholder="Address">
                 </div>
 
-             <button ref="button" type="submit" class="btn btn-primary w-full mb-6">Send your car to us.</button>
+             <button ref="button" type="submit" class="btn btn-primary w-full mb-6">Buy</button>
              
 
                 
@@ -91,14 +91,14 @@ const formed2 = async () => {
             })
         })
         if (response.ok) {
-            alert('Data added successfully')
+            alert('Thank you for your purchase')
             router.push('/')
         } else {
-            alert('Data added failed')
+            alert('Purchase failed')
         }
     } catch (error) {
         console.error(error)
-        alert('An error occurred while adding data')
+        alert('Error occured while Purchasing')
     }
 }
 

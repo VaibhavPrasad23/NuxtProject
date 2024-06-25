@@ -10,4 +10,5 @@ export interface ICar {
   ownername?: string
   ownernum?: number
   address?: string
+  revtype?: number
 }

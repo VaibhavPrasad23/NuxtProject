@@ -47,7 +47,7 @@
                     <input v-model="type" class="form--input" type="text" name="type" id="type" required placeholder="Type of Car">
                 </div>
 
-                <button ref="button" type="submit" class="btn btn-primary w-full mb-6">Send your car to us.</button>
+                <button ref="button" type="submit" class="btn btn-primary w-full mb-6">Add Car to Showroom.</button>
 
             </form>
         </section>

@@ -38,7 +38,6 @@ export default defineEventHandler(async event => {
     // })
 
     const user: IUser = await $fetch(`http://localhost:8090/user/${body.id}`, { method: 'GET' })
-
     const session: ISession = event.context.session
 
     session.auth = {

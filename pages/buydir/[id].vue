@@ -93,14 +93,14 @@ const formed2 = async () => {
             })
         })
         if (response.ok) {
-            alert('Data added successfully')
+            alert('Thank you for your purchase')
             router.push('/')
         } else {
-            alert('Data added failed')
+            alert('Purchase failed')
         }
     } catch (error) {
         console.error(error)
-        alert('An error occurred while adding data')
+        alert('Error occured while Purchasing')
     }
 }
 
