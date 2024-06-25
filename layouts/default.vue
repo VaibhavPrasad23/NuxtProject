@@ -7,12 +7,11 @@
             </NuxtLink>
             <ul :class="isSidebar ? 'right-0' : '-right-full'"
                 class="flex flex-col md:flex-row gap-4 items-end md:items-center p-8 md:p-0 fixed md:static top-20 bottom-0 text-white duration-300 ease-in">
-                <USelectMenu v-model="selected" :options="people" />
                 <li>
                     <NuxtLink to="/second" class="mr-4">Sell Your Car</NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink to="/formed">Add Car</NuxtLink>
+                    <NuxtLink to="/form">Add Car</NuxtLink>
                 </li>
 
                 <!-- <li>

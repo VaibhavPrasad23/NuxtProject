@@ -1,4 +1,4 @@
-import type { ICart } from "../interfaces/cart.interface"
+// import type { ICart } from "../interfaces/cart.interface"
 
-// init state
-export const useCarts = () => useState<ICart[]>('carts', () => [])
+// // init state
+// export const useCarts = () => useState<ICart[]>('carts', () => [])

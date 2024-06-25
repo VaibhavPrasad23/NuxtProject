@@ -11,4 +11,10 @@ export interface ISession {
   }
 }
 
-
+export interface ISessionAuth {
+  name: {
+    firstname: string,
+    lastname: string
+  },
+  id: number
+}

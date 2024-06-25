@@ -104,7 +104,7 @@ const getRandomUser = async (evt: MouseEvent) => {
         id.value = user.value.id
     }
 
-    success('Guest User Generated! ')
+    success('User Generated! ')
 
     targetElement.innerText = 'Click here'
     targetElement.disabled = false

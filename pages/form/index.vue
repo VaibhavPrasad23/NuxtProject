@@ -77,10 +77,10 @@ const year = ref(0)
 const type = ref('')
 const pic = ref('')
 
-const previewImage = (event) => {
-
-    const file = event.target.files[0]
-    const fileName = file.name
+const previewImage = (event: Event) => {
+    const target = event.target as HTMLInputElement
+    const file = (target.files as FileList)
+    const fileName = file[0].name
     pic.value = fileName
 }
 

@@ -101,13 +101,12 @@ const pic = ref('')
 
 
 
-const previewImage2 = (event: { target: { files: any[]; }; }) => {
-
-const file = event.target.files[0]
-const fileName = file.name
-pic.value = fileName
+const previewImage2 = (event: Event) => {
+    const target = event.target as HTMLInputElement
+    const file = (target.files as FileList)
+    const fileName = file[0].name
+    pic.value = fileName
 }
-
 
 
 const formed2 = async () => {
@@ -125,7 +124,10 @@ const formed2 = async () => {
                 price: price.value,
                 year: year.value,
                 type: type.value,
-                pic: pic?.value
+                pic: pic?.value,
+                ownername: ownername?.value,
+                ownernum: ownernum?.value,
+                address: address?.value
             })
         })
         if (response.ok) {

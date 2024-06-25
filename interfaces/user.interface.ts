@@ -10,3 +10,17 @@ export interface IUser {
   username?: string
   // name: IProfileUser
 }
+
+
+export interface IRequestBody {
+  username: string
+  password: string
+  id: number
+}
+
+
+export interface IResponse {
+  status: boolean
+  message: string
+  data: Object | Array<any>
+}

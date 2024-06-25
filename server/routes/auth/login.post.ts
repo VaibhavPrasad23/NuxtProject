@@ -1,29 +1,8 @@
-import type { IUser } from "../../../interfaces/user.interface"
-import type { ISession } from "../../../interfaces/session.interface"
+import type { IUser, IRequestBody, IResponse } from "../../../interfaces/user.interface"
+import type { ISession, ISessionAuth } from "../../../interfaces/session.interface"
 
-interface IRequestBody {
-  username: string
-  password: string
-  id: number
-}
+// define interface for user login
 
-interface IResponse {
-  status: boolean
-  message: string
-  data: Object | Array<any>
-}
-
-interface IToken {
-  token: string
-}
-
-interface ISessionAuth {
-  name: {
-    firstname: string,
-    lastname: string
-  },
-  id: number
-}
 
 export default defineEventHandler(async event => {
 
@@ -31,7 +10,7 @@ export default defineEventHandler(async event => {
   const body: IRequestBody = await readBody(event)
 
   try {
-    // fetching
+    //// fetching
     // const response: IToken = await $fetch('http://localhost:8090/user', {
     //   method: 'POST',
     //   body
@@ -65,3 +44,4 @@ export default defineEventHandler(async event => {
   }
 
 })
+
