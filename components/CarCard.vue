@@ -22,7 +22,7 @@
                 </div>
             </section>
         </section>
-        <NuxtLink class="btn btn-primary mt-2" :to="`/${ $route.path.includes('showroom') ? 'cars' : 'secondhand'}/${ car?.id }`">Details</NuxtLink>
+        <NuxtLink class="btn btn-primary mt-2" :to="`/${ $route.path.includes('showroom') ? 'showroom' : 'secondhand'}/${ car?.id }`">Details</NuxtLink>
     </section>
 </template>
 

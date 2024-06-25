@@ -3,7 +3,7 @@
         <nav class="bg-black shadow-sm flex justify-between items-center px-8 py-6">
             <NuxtLink class="font-semibold text-blue-200 text-lg flex" to="/">
 
-                <text class="text-red-500">i</text>Cube Systems  <text class="text-white">Showroom</text>
+                <text class="text-red-500">i</text>Cube Systems<text class="text-white"> Showroom</text>
             </NuxtLink>
             <ul :class="isSidebar ? 'right-0' : '-right-full'"
                 class="flex flex-col md:flex-row gap-4 items-end md:items-center p-8 md:p-0 fixed md:static top-20 bottom-0 text-white duration-300 ease-in">
@@ -13,13 +13,6 @@
                 <li>
                     <NuxtLink to="/form">Add Car</NuxtLink>
                 </li>
-
-                <!-- <li>
-                    <NuxtLink to="/cart" class="relative pl-3">
-                        Cart
-                        <div class="text-red-700 absolute -top-2 -right-3">{{ carts.getCartsLength }}</div>
-                    </NuxtLink>
-                </li> -->
 
                 <li>
                     <NuxtLink to="/secondhand" class="pl-4">Used Cars</NuxtLink>
@@ -45,8 +38,6 @@
         </nav>
     </header>
 
-    <NuxtLoadingIndicator :height="6"></NuxtLoadingIndicator>
-
 
     <main class="p-8">
         <slot />
@@ -58,7 +49,7 @@
 // composabels
 const { session } = await useSession()
 const router = useRouter()
-const carts = useCartsState()
+
 
 const isSidebar: Ref<boolean> = ref(false)
 

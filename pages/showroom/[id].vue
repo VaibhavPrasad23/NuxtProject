@@ -14,12 +14,12 @@ import type { ICar } from '../../interfaces/car.interface'
 
 const { id } = useRoute().params
 
-const URI: string = `http://localhost:8090/car/brandz/${ id }`
+const URI: string = `http://localhost:8090/car/${ id }`
 
 const { data: product }: { data: Ref<ICar> } = await useFetch(URI, { key: URI })
 
 if ( !product.value ) {
-    throw createError({ statusCode: 404, message: `Car detail with ID ${ id } not found` })
+    throw createError({ statusCode: 404, message: `Product detail with ID ${ id } not found` })
 }
 
 </script>
